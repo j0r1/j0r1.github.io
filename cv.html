@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+<style>
+
+body {
+   font-family: Helvetica, arial, sans-serif;
+   font-size: 14px;
+   line-height: 1.6;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   background-color: white;
+   text-align: justify;
+   padding: 30px; }
+
+body > *:first-child {
+   margin-top: 0 !important; }
+body > *:last-child {
+   margin-bottom: 0 !important; }
+
+a {
+   color: #4183C4; }
+a.absent {
+   color: #cc0000; }
+a.anchor {
+   display: block;
+   padding-left: 30px;
+   margin-left: -30px;
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+   margin: 20px 0 10px;
+   padding: 0;
+   font-weight: bold;
+   -webkit-font-smoothing: antialiased;
+   cursor: text;
+   position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+   text-decoration: none; }
+
+h1 tt, h1 code {
+   font-size: inherit; }
+
+h2 tt, h2 code {
+   font-size: inherit; }
+
+h3 tt, h3 code {
+   font-size: inherit; }
+
+h4 tt, h4 code {
+   font-size: inherit; }
+
+h5 tt, h5 code {
+   font-size: inherit; }
+
+h6 tt, h6 code {
+   font-size: inherit; }
+
+h1 {
+   font-size: 28px;
+   color: black; }
+
+h2 {
+   font-size: 24px;
+   border-bottom: 1px solid #cccccc;
+   color: black; }
+
+h3 {
+   font-size: 18px; }
+
+h4 {
+   font-size: 16px; }
+
+h5 {
+   font-size: 14px; }
+
+h6 {
+   color: #777777;
+   font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+   margin: 15px 0; }
+
+hr {
+   border: 0 none;
+   color: #cccccc;
+   height: 4px;
+   padding: 0;
+}
+
+body > h2:first-child {
+   margin-top: 0;
+   padding-top: 0; }
+body > h1:first-child {
+   margin-top: 0;
+   padding-top: 0; }
+body > h1:first-child + h2 {
+   margin-top: 0;
+   padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+   margin-top: 0;
+   padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+   margin-top: 0;
+   padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+   margin-top: 0; }
+
+li p.first {
+   display: inline-block; }
+li {
+   margin: 0; }
+ul, ol {
+   padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+   margin-top: 0; }
+
+dl {
+   padding: 0; }
+dl dt {
+   font-size: 14px;
+   font-weight: bold;
+   font-style: italic;
+   padding: 0;
+   margin: 15px 0 5px; }
+dl dt:first-child {
+   padding: 0; }
+dl dt > :first-child {
+   margin-top: 0; }
+dl dt > :last-child {
+   margin-bottom: 0; }
+dl dd {
+   margin: 0 0 15px;
+   padding: 0 15px; }
+dl dd > :first-child {
+   margin-top: 0; }
+dl dd > :last-child {
+   margin-bottom: 0; }
+
+blockquote {
+   border-left: 4px solid #dddddd;
+   padding: 0 15px;
+   color: #777777; }
+blockquote > :first-child {
+   margin-top: 0; }
+blockquote > :last-child {
+   margin-bottom: 0; }
+
+table {
+   padding: 0;border-collapse: collapse; }
+table tr {
+   border-top: 1px solid #cccccc;
+   background-color: white;
+   margin: 0;
+   padding: 0; }
+table tr:nth-child(2n) {
+   background-color: #f8f8f8; }
+table tr th {
+   font-weight: bold;
+   border: 1px solid #cccccc;
+   margin: 0;
+   padding: 6px 13px; }
+table tr td {
+   border: 1px solid #cccccc;
+   margin: 0;
+   padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child {
+   margin-top: 0; }
+table tr th :last-child, table tr td :last-child {
+   margin-bottom: 0; }
+
+img {
+   max-width: 100%; }
+
+span.frame {
+   display: block;
+   overflow: hidden; }
+span.frame > span {
+   border: 1px solid #dddddd;
+   display: block;
+   float: left;
+   overflow: hidden;
+   margin: 13px 0 0;
+   padding: 7px;
+   width: auto; }
+span.frame span img {
+   display: block;
+   float: left; }
+span.frame span span {
+   clear: both;
+   color: #333333;
+   display: block;
+   padding: 5px 0 0; }
+span.align-center {
+   display: block;
+   overflow: hidden;
+   clear: both; }
+span.align-center > span {
+   display: block;
+   overflow: hidden;
+   margin: 13px auto 0;
+   text-align: center; }
+span.align-center span img {
+   margin: 0 auto;
+   text-align: center; }
+span.align-right {
+   display: block;
+   overflow: hidden;
+   clear: both; }
+span.align-right > span {
+   display: block;
+   overflow: hidden;
+   margin: 13px 0 0;
+   text-align: right; }
+span.align-right span img {
+   margin: 0;
+   text-align: right; }
+span.float-left {
+   display: block;
+   margin-right: 13px;
+   overflow: hidden;
+   float: left; }
+span.float-left span {
+   margin: 13px 0 0; }
+span.float-right {
+   display: block;
+   margin-left: 13px;
+   overflow: hidden;
+   float: right; }
+span.float-right > span {
+   display: block;
+   overflow: hidden;
+   margin: 13px auto 0;
+   text-align: right; }
+
+code, tt {
+   margin: 0 2px;
+   padding: 0 5px;
+   white-space: nowrap;
+   border: 1px solid #eaeaea;
+   background-color: #f8f8f8;
+   border-radius: 3px; }
+
+pre code {
+   margin: 0;
+   padding: 0;
+   white-space: pre;
+   border: none;
+   background: transparent; }
+
+.highlight pre {
+   background-color: #f8f8f8;
+   border: 1px solid #cccccc;
+   font-size: 13px;
+   line-height: 19px;
+   overflow: auto;
+   padding: 6px 10px;
+   border-radius: 3px; }
+
+pre {
+   background-color: #f8f8f8;
+   border: 1px solid #cccccc;
+   font-size: 13px;
+   line-height: 19px;
+   overflow: auto;
+   padding: 6px 10px;
+   border-radius: 3px; }
+pre code, pre tt {
+   background-color: transparent;
+   border: none; }
+
+sup {
+   font-size: 0.83em;
+   vertical-align: super;
+   line-height: 0;
+}
+* {
+	 -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+   body {
+      width: 854px;
+      margin:0 auto;
+   }
+}
+@media print {
+	 table, pre {
+		  page-break-inside: avoid;
+	 }
+	 pre {
+		  word-wrap: break-word;
+	 }
+}
+</style></head>
+<body>
+<h1 id="curriculum-vitae-2018-09-05">Curriculum Vitae <span style="float:right;font-size:10px;">2018-09-05</span></h1>
+<h2 id="personal-data">Personal data</h2>
+<p><img style="float:right;border:solid 1px;" src="ikke.jpg" width="20%"></p>
+<p>Name: Jori Liesenborgs</p>
+<p>Date of birth: July 11, 1978</p>
+<p>Address: (address available on request)</p>
+<p>Phone: (phone available on request)</p>
+<p>E-mail: <code>jori.liesenborgs@gmail.com</code></p>
+<h2 id="education">Education</h2>
+<p>2006 - 2010: PhD in physics at <a href="https://www.uhasselt.be">UHasselt</a></p>
+<ul>
+<li><a href="http://research.edm.uhasselt.be/~jori/page/Physics/Thesis.html">thesis</a>: 'Genetic algorithms for the non-parametric inversion of gravitational lenses'</li>
+</ul>
+<p>2000 - 2005: MSc physics at <a href="https://www.uhasselt.be">UHasselt</a>/<a href="https://www.ugent.be">UGent</a></p>
+<ul>
+<li>grades: 92%, 94%, 91%, 92%</li>
+<li>thesis: 'Niet-parametrische inversie van gravitationele lenzen', grade 95%</li>
+</ul>
+<p>1996 - 2000: MSc computer science at School for Knowledge Technology (UHasselt/Maastricht University)</p>
+<ul>
+<li>grades: 80%, 80%, 86%, 91%</li>
+<li><a href="http://research.edm.uhasselt.be/~jori/thesis/onlinethesis/contents.html">thesis</a>: 'Voice over IP in networked virtual environments', grade 95%</li>
+</ul>
+<h2 id="work">Work</h2>
+<p>2017 - now: <a href="https://www.uhasselt.be/fiche_en?email=jori.liesenborgs#fiche">assistant professor ('docent') at UHasselt</a></p>
+<p>2015 - 2018: researcher at iMinds/imec</p>
+<p>2010 - now: postdoc at <a href="http://www.edm.uhasselt.be">EDM</a>/UHasselt</p>
+<p>2006 - 2010: PhD scholarship at EDM/UHasselt</p>
+<p>2005 - 2006: researcher at EDM/UHasselt</p>
+<p>2000 - 2001: researcher at EDM/UHasselt</p>
+<h2 id="languages">Languages</h2>
+<p>Dutch: native language</p>
+<p>English: fluent</p>
+<p>French: basic knowledge</p>
+<p>Swedish: very (very) basic knowledge</p>
+<h2 id="scientific-publications">Scientific publications</h2>
+<p>All publications can be found at <a href="https://uhdspace.uhasselt.be/dspace/browse?type=author&amp;authority=1338&amp;sort_by=2&amp;order=DESC&amp;rpp=20&amp;etal=0&amp;submit_browse=Update">UHasselt document server</a></p>
+<p>Astrophysics publications can also be found at <a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&amp;author=Liesenborgs,%20Jori&amp;db_key=AST">ADS</a></p>
+<p>Current h-index: 13</p>
+<h2 id="experience">Experience</h2>
+<ul>
+<li><p>Much experience in C/C++, examples are</p>
+<ul>
+<li><a href="https://github.com/j0r1/JRTPLIB">JRTPLIB</a>: low-level <a href="https://tools.ietf.org/html/rfc3550">RTP</a> library</li>
+<li><a href="https://github.com/j0r1/EMIPLIB">EMIPLIB</a>: more high-level audio/video streaming library</li>
+<li><a href="https://github.com/j0r1/GRALE2">GRALE</a>: core library is written in C++ for speed, but for ease of development and use higher-level functions are written in Python (C++/Python bindings are written using <a href="http://cython.org/">Cython</a>)</li>
+<li>Simulation of solar cells (using drift-diffusion equations): <a href="http://research.edm.uhasselt.be/simiconductor/">SimiConductor</a></li>
+<li>Agent-based simulation model for HIV studies: <a href="https://github.com/j0r1/simpactcyan">SimpactCyan</a></li>
+<li>Streaming from native Qt application to browser using WebRTC (<a href="http://research.edm.uhasselt.be/~jori/page/Misc/QtWebRTC.html">demo code</a> is outdated)</li>
+</ul></li>
+<li><p>Development of executables and libraries for Linux, MS-Windows, OS X</p></li>
+<li><p>Much experience with Python, for example</p>
+<ul>
+<li><a href="https://sherpass-lite.appspot.com/about.html">SherPass</a>, a password manager that uses GPG (GNU Privacy Guard) for PGP-encryption</li>
+<li>Python interface to <a href="http://research.edm.uhasselt.be/~jori/grale2/">GRALE</a></li>
+<li>Automation of analysis (<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">Blast</a>, <a href="https://www.ncbi.nlm.nih.gov/genbank/">GenBank</a>) of DNA sequences</li>
+<li><a href="https://github.com/j0r1/PyMT">Scripts</a> to automate settings/updates for collections of MikroTik devices</li>
+<li>Many, many smaller scripts to automate things on various servers</li>
+</ul></li>
+<li><p>Decent experience in JavaScipt, for example in</p>
+<ul>
+<li><a href="https://slightsync.appspot.com/">SlightSync</a>, a tool for synchronized viewing of PDF slides</li>
+<li><a href="https://sub-lime.appspot.com/">SubLime</a>, a tool to add subtitles to HTML5 video</li>
+<li><a href="https://j0r1.github.io/osmcache/">OSMCache</a>, a web-site that can be used for basic <a href="https://www.geocaching.com">geocaching</a> (uses maps from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, hence the 'OSM')</li>
+</ul></li>
+<li><p>Android apps:</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=org.jori.qosmcache&amp;hl=en">QOsmCache</a>: app that uses a browser component to display the web-based version.</li>
+<li><a href="https://play.google.com/store/apps/details?id=org.jori.audioreceiver">AudioReceiver</a>: app that can receive audio sent out by <a href="https://audiotranceiver.appspot.com/">another program</a> (uses cross-compiled JRTPLIB and EMIPLIB internally)</li>
+</ul></li>
+<li><p>Experience with <a href="https://www.qt.io/">Qt</a> for GUI work</p></li>
+<li><p>Experience with OpenGL, but more with WebGL in browser</p></li>
+<li><p>Regarding high-performance computing (HPC): experience with OpenCL and CUDA, OpenMP, MPI</p></li>
+<li><p>Knowledge of Java, but not used actively for many years</p></li>
+<li><p>Modifications of Chrome/Chromium for research projects (making OpenCL and OpenGL4 available in the browser using JavaScript, making 10-bit color possible)</p></li>
+<li><p>Optimization/simulation in several contexts, some examples are</p>
+<ul>
+<li>using (multi-objective) genetic algorithms for optimization in astrophysics problem (gravitational lens inversion)</li>
+<li>finding optimal 3D shape using simulated annealing approach for a physical system (results present on pages 116-121 of <a href="https://uhdspace.uhasselt.be/dspace/bitstream/1942/8775/1/MartijnVanDenBroek.pdf">a thesis</a>, an <a href="http://research.edm.uhasselt.be/~jori/model/model400.mp4">animation</a> is also available on-line)</li>
+<li>compartmental model for <a href="https://uhdspace.uhasselt.be/dspace/bitstream/1942/16166/1/KCE_204_Seasonal_influenza_vaccination_partII.pdf">simulation of influenza</a></li>
+</ul></li>
+<li><p>Basic (technical) blockchain knowledge (Bitcoin, Ethereum smart contracts)</p></li>
+<li><p>Many years experience maintaining Linux servers (mainly Debian based); twenty years experience using Slackware Linux as main desktop system</p></li>
+<li><p>Very basic experience with neural networks, but no hands on practical experience with e.g. TensorFlow</p></li>
+</ul>
+<h2 id="deprecatedlacking-experience">Deprecated/lacking experience</h2>
+<ul>
+<li><p>No experience with Objective C</p></li>
+<li><p>Haven't used SQL or databases in general actively for a very long time</p></li>
+<li><p>Only basic web development knowledge, no real experience making nice looking websites and CSS</p></li>
+</ul>
+<h2 id="interests">Interests</h2>
+<p>I hope my experience so far reflects my interests:</p>
+<ul>
+<li><p>in general I like programming, from quite complex C++ frameworks to more straightforward scripts in Python or Bash. In essence, I like creating new, interesting things, and really focus on a topic.</p></li>
+<li><p>I'm typically more interested in non-GUI aspects (I'd rather write elegant code than make a pretty user interface).</p></li>
+<li><p>due to my background in both physics and computer science, it should not be a surprise that the overlap (computational science/scientific computing) is usually extra appealing.</p></li>
+</ul>
+<h2 id="hobbies-other-than-programming">Hobbies <span style="font-size: 8px">(other than programming)</span></h2>
+<ul>
+<li><p>Playing the guitar, playing the drums</p></li>
+<li><p>Geocaching</p></li>
+<li><p>Walking</p></li>
+<li><p>Riding my bicycle</p></li>
+<li><p>Reading</p></li>
+</ul>
+</body>
+</html>
